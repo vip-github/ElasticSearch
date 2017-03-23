@@ -1,0 +1,40 @@
+{
+	"properties": {
+		"id": {
+			"type": "string",
+			"store": "yes",
+			"index": "not_analyzed"
+		},
+		"title": {
+			"type": "string",
+			"store": "yes",
+			"index": "analyzed"
+		},
+		"title_cn": {
+			"type": "string",
+			"store": "yes",
+			"index": "analyzed",
+			"analyzer": "ik_max_word",
+			"search_analyzer": "ik_max_word"
+		},
+		"content": {
+			"type": "string",
+			"store": "yes",
+			"index": "analyzed",
+			"analyzer": "ik_max_word",
+			"search_analyzer": "ik_max_word"
+		},
+		"keywords": {
+			"type": "string",
+			"store": "yes",
+			"index": "analyzed"
+		},
+		"keywords_cn": {
+			"type": "string",
+			"store": "yes",
+			"index": "analyzed",
+			"analyzer": "ik_max_word",
+			"search_analyzer": "ik_max_word"
+		}
+	}
+}
