@@ -44,6 +44,7 @@ public class ElasticSearchClient {
 		client.mapping(indexName, "news");
 		//client.insertTestData();
 		//client.search();
+		client.close();
 	}
 
 	private static TransportClient client = null;
@@ -88,8 +89,6 @@ public class ElasticSearchClient {
 		} catch (IOException e) {
 			e.printStackTrace();
 			logger.error(e.toString());
-		} finally {
-			close();
 		}
 	}
 	
@@ -99,16 +98,16 @@ public class ElasticSearchClient {
 			String title = "三一";
 			String kekwords = "北海道";
 			Map<String, String> source = new LinkedHashMap<String, String>();
-			source.put("content", content);
 			source.put("title", title);
+			source.put("title_cn", title);
 			source.put("keywords", kekwords);
+			source.put("keywords_cn", kekwords);
+			source.put("content", content);
 			String id = Hashing.md5().hashString(StringUtils.strip(title), Charsets.UTF_8).toString();
 			client.prepareIndex(indexName, "news", id).setSource(source).get();
 		} catch (Exception e) {
 			e.printStackTrace();
 			logger.error(e.toString());
-		} finally {
-			close();
 		}
 	}
 	
@@ -130,8 +129,6 @@ public class ElasticSearchClient {
 		} catch (Exception e) {
 			e.printStackTrace();
 			logger.error(e.toString());
-		} finally {
-			close();
 		}
 	}
 
