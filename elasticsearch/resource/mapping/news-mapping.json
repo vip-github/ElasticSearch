@@ -1,40 +1,113 @@
 {
 	"properties": {
 		"id": {
-			"type": "string",
+			"type": "keyword",
 			"store": "yes",
 			"index": "not_analyzed"
 		},
 		"title": {
-			"type": "string",
-			"store": "yes",
-			"index": "analyzed"
-		},
-		"title_cn": {
-			"type": "string",
+			"type": "text",
 			"store": "yes",
 			"index": "analyzed",
 			"analyzer": "ik_max_word",
 			"search_analyzer": "ik_max_word"
 		},
 		"content": {
-			"type": "string",
+			"type": "text",
 			"store": "yes",
 			"index": "analyzed",
 			"analyzer": "ik_max_word",
 			"search_analyzer": "ik_max_word"
 		},
-		"keywords": {
-			"type": "string",
+		"timestamp": {
+			"type": "long",
 			"store": "yes",
-			"index": "analyzed"
+			"index": "not_analyzed"
 		},
-		"keywords_cn": {
-			"type": "string",
+		"publishTime": {
+			"type": "long",
 			"store": "yes",
-			"index": "analyzed",
-			"analyzer": "ik_max_word",
-			"search_analyzer": "ik_max_word"
+			"index": "not_analyzed"
+		},
+		"source": {
+			"type": "keyword",
+			"store": "yes",
+			"index": "not_analyzed"
+		},
+		"author": {
+			"type": "keyword",
+			"store": "yes",
+			"index": "not_analyzed"
+		},
+		"keyWords": {
+			"type": "keyword",
+			"store": "yes",
+			"index": "not_analyzed"
+		},
+		"likeCount": {
+			"type": "long",
+			"store": "yes",
+			"index": "not_analyzed"
+		},
+		"replyCount": {
+			"type": "long",
+			"store": "yes",
+			"index": "not_analyzed"
+		},
+		"viewCount": {
+			"type": "long",
+			"store": "yes",
+			"index": "not_analyzed"
+		},
+		"createTime": {
+			"type": "long",
+			"store": "yes",
+			"index": "not_analyzed"
+		},
+		"url": {
+			"type": "keyword",
+			"store": "yes",
+			"index": "not_analyzed"
+		},
+		"seedType": {
+			"type": "keyword",
+			"store": "yes",
+			"index": "not_analyzed"
+		},
+		"domainId": {
+			"type": "keyword",
+			"store": "yes",
+			"index": "not_analyzed"
+		},
+		"domainName": {
+			"type": "keyword",
+			"store": "yes",
+			"index": "not_analyzed"
+		},
+		"domainSign": {
+			"type": "keyword",
+			"store": "yes",
+			"index": "not_analyzed"
+		},
+		"websiteName": {
+			"type": "keyword",
+			"store": "yes",
+			"index": "not_analyzed"
+		},
+		"websiteId": {
+			"type": "keyword",
+			"store": "yes",
+			"index": "not_analyzed"
+		},
+		"websiteSign": {
+			"type": "keyword",
+			"store": "yes",
+			"index": "not_analyzed"
+		},
+		"websiteUrl": {
+			"type": "keyword",
+			"store": "yes",
+			"index": "not_analyzed"
 		}
 	}
 }
